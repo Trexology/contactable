@@ -11,6 +11,7 @@ class CreatePhoneNumbersTable extends Migration
             $table->bigIncrements('id');
 
             $table->string('number');
+            $table->string('contact_person')->nullable();
             $table->string('raw_number')->unique();
             $table->string('extension')->nullable();
             $table->string('type', 64)->nullable()->default('work');

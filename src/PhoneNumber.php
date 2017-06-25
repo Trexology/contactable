@@ -13,8 +13,8 @@ class PhoneNumber extends Model {
     protected $table = 'phone_numbers';
     protected $autoPositionBasedOnFields = ['phonable_id', 'phonable_type'];
 
-    protected $fillable = ['number', 'extension', 'type', 'country'];
-    protected $visible = ['number', 'extension', 'type', 'country'];
+    protected $fillable = ['number', 'extension', 'type', 'country', 'contact_person'];
+    protected $visible = ['number', 'extension', 'type', 'country', 'contact_person'];
     protected $touches = ['phonable'];
 
     /**
