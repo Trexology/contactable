@@ -22,7 +22,7 @@
     "extra": {
       "laravel": {
         "providers": [
-          "Trexology\\Contactable\\AuthServiceProvider",
+          "Trexology\\Contactable\\ContactableAuthProvider",
           "Trexology\\Contactable\\ContactableServiceProvider"
         ],
         "aliases": {
