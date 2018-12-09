@@ -1,8 +1,8 @@
 <?php
 
-namespace GridPrinciples\Contactable\Providers;
+namespace Trexology\Contactable\Providers;
 
-use GridPrinciples\Contactable\Providers\ContactableAuthProvider;
+use Trexology\Contactable\Providers\ContactableAuthProvider;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
 

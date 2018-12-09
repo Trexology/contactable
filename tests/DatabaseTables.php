@@ -1,8 +1,8 @@
 <?php
 
-namespace GridPrinciples\Contactable\Tests;
+namespace Trexology\Contactable\Tests;
 
-use GridPrinciples\Contactable\Tests\Cases\DatabaseTestCase;
+use Trexology\Contactable\Tests\Cases\DatabaseTestCase;
 use Illuminate\Support\Facades\Schema;
 
 class DatabaseTables extends DatabaseTestCase

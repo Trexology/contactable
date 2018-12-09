@@ -1,6 +1,6 @@
 <?php
 
-namespace GridPrinciples\Contactable\Tests\Cases;
+namespace Trexology\Contactable\Tests\Cases;
 
 use Illuminate\Filesystem\ClassFinder;
 use Illuminate\Filesystem\Filesystem;

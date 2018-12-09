@@ -12,8 +12,7 @@ class CreateEmailAddressesTable extends Migration
 
             $table->string('address')->unique();
 
-            $table->bigInteger('emailable_id')->unsigned()->index();
-            $table->string('emailable_type');
+            $table->morphs('emailable');
 
             $table->smallInteger('position')->unsigned();
 

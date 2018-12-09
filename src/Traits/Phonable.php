@@ -4,9 +4,9 @@
  * Relates any model with phone numbers.
  */
 
-namespace GridPrinciples\Contactable\Traits;
+namespace Trexology\Contactable\Traits;
 
-use GridPrinciples\Contactable\PhoneNumber;
+use Trexology\Contactable\PhoneNumber;
 
 trait Phonable
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace GridPrinciples\Contactable\Tests;
+namespace Trexology\Contactable\Tests;
 
-use GridPrinciples\Contactable\Address;
-use GridPrinciples\Contactable\Tests\Cases\UserTestCase;
+use Trexology\Contactable\Address;
+use Trexology\Contactable\Tests\Cases\UserTestCase;
 
 class AddressAssociation extends UserTestCase
 {

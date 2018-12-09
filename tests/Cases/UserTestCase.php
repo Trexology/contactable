@@ -1,8 +1,8 @@
 <?php
 
-namespace GridPrinciples\Contactable\Tests\Cases;
+namespace Trexology\Contactable\Tests\Cases;
 
-use GridPrinciples\Contactable\Tests\Mocks\User;
+use Trexology\Contactable\Tests\Mocks\User;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 

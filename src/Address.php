@@ -1,8 +1,8 @@
 <?php
 
-namespace GridPrinciples\Contactable;
+namespace Trexology\Contactable;
 
-use GridPrinciples\Contactable\Traits\IncrementsPosition;
+use Trexology\Contactable\Traits\IncrementsPosition;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -13,8 +13,8 @@ class Address extends Model {
     protected $table = 'addresses';
     protected $autoPositionBasedOnFields = ['addressable_id', 'addressable_type'];
 
-    protected $fillable = ['street', 'street_extra', 'city', 'subdivision', 'state', 'province', 'postal_code', 'zip', 'zip_code', 'country'];
-    protected $visible = ['street', 'street_extra', 'city', 'subdivision', 'postal_code', 'country'];
+    protected $fillable = ['block', 'unit', 'street', 'street_extra', 'city', 'subdivision', 'state', 'province', 'postal_code', 'zip', 'zip_code', 'country', 'country_code', 'lat', 'long'];
+    protected $visible = ['block', 'unit', 'street', 'street', 'street_extra', 'city', 'subdivision', 'postal_code', 'country', 'country_code', 'lat', 'long'];
     protected $touches = ['addressable'];
 
     /**

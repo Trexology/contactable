@@ -4,9 +4,9 @@
  * Relates any model with real-world addresses.
  */
 
-namespace GridPrinciples\Contactable\Traits;
+namespace Trexology\Contactable\Traits;
 
-use GridPrinciples\Contactable\Address;
+use Trexology\Contactable\Address;
 
 trait Addressable
 {

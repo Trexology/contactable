@@ -4,9 +4,9 @@
  * Relates any model with e-mail addresses.
  */
 
-namespace GridPrinciples\Contactable\Traits;
+namespace Trexology\Contactable\Traits;
 
-use GridPrinciples\Contactable\EmailAddress;
+use Trexology\Contactable\EmailAddress;
 
 trait Emailable
 {

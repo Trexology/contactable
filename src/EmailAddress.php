@@ -1,8 +1,8 @@
 <?php
 
-namespace GridPrinciples\Contactable;
+namespace Trexology\Contactable;
 
-use GridPrinciples\Contactable\Traits\IncrementsPosition;
+use Trexology\Contactable\Traits\IncrementsPosition;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 

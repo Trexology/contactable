@@ -10,14 +10,14 @@ class CreatePhoneNumbersTable extends Migration
         Schema::create('phone_numbers', function (Blueprint $table) {
             $table->bigIncrements('id');
 
+            $table->string('extension')->nullable();
             $table->string('number');
             $table->string('raw_number')->unique();
-            $table->string('extension')->nullable();
             $table->string('type', 64)->nullable()->default('work');
-            $table->string('country', 2)->default('us');
+            $table->string('country')->nullable();
+            $table->string('country_code', 2)->default('sg');
 
-            $table->bigInteger('phonable_id')->unsigned()->index();
-            $table->string('phonable_type');
+            $table->morphs('phonable');
 
             $table->smallInteger('position')->unsigned();
 

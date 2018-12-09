@@ -10,15 +10,22 @@ class CreateAddressesTable extends Migration {
         Schema::create('addresses', function(Blueprint $table) {
             $table->bigIncrements('id');
 
-            $table->bigInteger('addressable_id')->unsigned()->index();
-            $table->string('addressable_type');
+            $table->morphs('addressable');
+
+            $table->string('block')->nullable();
+            $table->string('unit')->nullable();
 
             $table->string('street')->nullable();
             $table->string('street_extra')->nullable();
+
+            $table->string('country')->nullable();
+            $table->string('country_code', 2)->nullable()->default('sg');
             $table->string('city')->nullable();
             $table->string('subdivision')->nullable();
-            $table->string('country', 2)->nullable()->default('us');
+
             $table->string('postal_code')->nullable();
+            $table->decimal('lat', 10, 7)->nullable();
+            $table->decimal('long', 10, 7)->nullable();
 
             $table->smallInteger('position')->unsigned();
 

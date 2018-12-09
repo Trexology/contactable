@@ -1,11 +1,11 @@
 <?php
 
-namespace GridPrinciples\Contactable\Tests;
+namespace Trexology\Contactable\Tests;
 
-use GridPrinciples\Contactable\Address;
-use GridPrinciples\Contactable\EmailAddress;
-use GridPrinciples\Contactable\PhoneNumber;
-use GridPrinciples\Contactable\Tests\Cases\UserTestCase;
+use Trexology\Contactable\Address;
+use Trexology\Contactable\EmailAddress;
+use Trexology\Contactable\PhoneNumber;
+use Trexology\Contactable\Tests\Cases\UserTestCase;
 
 class Positioning extends UserTestCase {
     public function test_items_are_positioned_on_creation()

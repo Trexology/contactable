@@ -1,9 +1,9 @@
 <?php
 
-namespace GridPrinciples\Contactable\Tests;
+namespace Trexology\Contactable\Tests;
 
-use GridPrinciples\Contactable\EmailAddress;
-use GridPrinciples\Contactable\Tests\Cases\UserTestCase;
+use Trexology\Contactable\EmailAddress;
+use Trexology\Contactable\Tests\Cases\UserTestCase;
 
 class EmailAssociation extends UserTestCase
 {

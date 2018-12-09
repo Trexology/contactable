@@ -1,11 +1,11 @@
 <?php
 
-namespace GridPrinciples\Contactable\Tests\Mocks;
+namespace Trexology\Contactable\Tests\Mocks;
 
-use GridPrinciples\Contactable\Providers\ContactableAuthProvider as BaseContactableAuthProvider;
+use Trexology\Contactable\Providers\ContactableAuthProvider as BaseContactableAuthProvider;
 
 class ContactableAuthProvider extends BaseContactableAuthProvider {
 
-    protected $model = \GridPrinciples\Contactable\Tests\Mocks\User::class;
+    protected $model = \Trexology\Contactable\Tests\Mocks\User::class;
 
 }

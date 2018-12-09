@@ -1,9 +1,9 @@
 {
-    "name": "gridprinciples/contactable",
+    "name": "trexology/contactable",
     "description": "Allows users to have multiple e-mail addresses and phone numbers, and log in with them, on Laravel",
     "autoload": {
         "psr-4": {
-            "GridPrinciples\\Contactable\\": "src/"
+            "Trexology\\Contactable\\": "src/"
         }
     },
     "require": {
@@ -16,7 +16,17 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "GridPrinciples\\Contactable\\Tests\\": "tests/"
+            "Trexology\\Contactable\\Tests\\": "tests/"
         }
+    },
+    "extra": {
+      "laravel": {
+        "providers": [
+          "Trexology\\Contactable\\AuthServiceProvider"
+          "Trexology\\Contactable\\ContactableServiceProvider"
+        ],
+        "aliases": {
+        }
+      }
     }
 }

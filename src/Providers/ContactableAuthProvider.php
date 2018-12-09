@@ -1,6 +1,6 @@
 <?php
 
-namespace GridPrinciples\Contactable\Providers;
+namespace Trexology\Contactable\Providers;
 
 use Illuminate\Auth\EloquentUserProvider;
 use Illuminate\Contracts\Auth\UserProvider;

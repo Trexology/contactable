@@ -1,8 +1,8 @@
 <?php
 
-namespace GridPrinciples\Contactable;
+namespace Trexology\Contactable;
 
-use GridPrinciples\Contactable\Traits\IncrementsPosition;
+use Trexology\Contactable\Traits\IncrementsPosition;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -13,8 +13,8 @@ class PhoneNumber extends Model {
     protected $table = 'phone_numbers';
     protected $autoPositionBasedOnFields = ['phonable_id', 'phonable_type'];
 
-    protected $fillable = ['number', 'extension', 'type', 'country'];
-    protected $visible = ['number', 'extension', 'type', 'country'];
+    protected $fillable = ['number', 'extension', 'type', 'country', 'country_code'];
+    protected $visible = ['number', 'extension', 'type', 'country', 'country_code'];
     protected $touches = ['phonable'];
 
     /**

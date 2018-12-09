@@ -1,8 +1,8 @@
 <?php
 
-namespace GridPrinciples\Contactable\Tests;
+namespace Trexology\Contactable\Tests;
 
-use GridPrinciples\Contactable\Tests\Cases\UserTestCase;
+use Trexology\Contactable\Tests\Cases\UserTestCase;
 
 class UserTest extends UserTestCase
 {

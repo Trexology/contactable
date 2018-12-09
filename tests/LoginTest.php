@@ -1,10 +1,10 @@
 <?php
 
-namespace GridPrinciples\Contactable\Tests;
+namespace Trexology\Contactable\Tests;
 
-use GridPrinciples\Contactable\EmailAddress;
-use GridPrinciples\Contactable\PhoneNumber;
-use GridPrinciples\Contactable\Tests\Cases\UserTestCase;
+use Trexology\Contactable\EmailAddress;
+use Trexology\Contactable\PhoneNumber;
+use Trexology\Contactable\Tests\Cases\UserTestCase;
 use Illuminate\Support\Facades\Auth;
 
 class LoginTest extends UserTestCase
