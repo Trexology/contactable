@@ -22,7 +22,6 @@
     "extra": {
       "laravel": {
         "providers": [
-          "Trexology\\Contactable\\ContactableAuthProvider",
           "Trexology\\Contactable\\ContactableServiceProvider"
         ],
         "aliases": {
