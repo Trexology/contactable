@@ -32,13 +32,25 @@ Remove the email column from your create_users_table table migration, if applica
 
 For any models you would like to have their own phone numbers or e-mail addresses, add the appropriate trait:
 
-- use `Addressable`;
-- use `Phonable`;
-- use `Emailable`;
+```
+use Trexology\Contactable\Traits\Addressable;
+use Trexology\Contactable\Traits\Phonable;
+use Trexology\Contactable\Traits\Emailable;
+
+class User extends Authenticatable implements
+{
+    use Addressable, Phonable, Emailable;
+```
 
 …or use the `Contactable` trait to quickly add addresses, phones and e-mails:
 
-use `Contactable`;
+```
+use Trexology\Contactable\Traits\Contactable;
+
+class User extends Authenticatable implements
+{
+    use Contactable;
+```
 
 The above traits simply add the appropriate relationships to your model. Now, you may query the relationships using Eloquent as you normally would.
 
@@ -48,13 +60,13 @@ The above traits simply add the appropriate relationships to your model. Now, yo
 
 // Add an e-mail address to a new model
 $model = new Model;
-$model->emails()->save(new \GridPrinciples\Contactable\EmailAddress(['address' => 'zero@example.com']));
+$model->emails()->save(new \Trexology\Contactable\EmailAddress(['address' => 'zero@example.com']));
 
 // Add multiple e-mail addresses to a pre-existing model
 $model = Model::find(1);
 $model->emails()->saveMany([
-    new \GridPrinciples\Contactable\EmailAddress(['address' => 'one@example.com']),
-    new \GridPrinciples\Contactable\EmailAddress(['address' => 'two@example.com']),
+    new \Trexology\Contactable\EmailAddress(['address' => 'one@example.com']),
+    new \Trexology\Contactable\EmailAddress(['address' => 'two@example.com']),
 ]);
 
 
@@ -75,13 +87,13 @@ Model::whereHas('emails', function ($query) use ($address) {
 
 // Add a phone number to a new model
 $model = new Model;
-$model->phones()->save(new \GridPrinciples\Contactable\PhoneNumber(['number' => '123 4567']));
+$model->phones()->save(new \Trexology\Contactable\PhoneNumber(['number' => '123 4567']));
 
 // Add multiple phone numbers to a pre-existing model
 $model = Model::find(1);
 $model->phones()->saveMany([
-    new \GridPrinciples\Contactable\PhoneNumber(['number' => '(234) 567-8900']),
-    new \GridPrinciples\Contactable\PhoneNumber(['number' => '2222222']),
+    new \Trexology\Contactable\PhoneNumber(['number' => '(234) 567-8900']),
+    new \Trexology\Contactable\PhoneNumber(['number' => '2222222']),
 ]);
 
 // Query records which have at least two phone numbers
