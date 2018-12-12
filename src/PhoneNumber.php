@@ -14,7 +14,7 @@ class PhoneNumber extends Model {
     protected $autoPositionBasedOnFields = ['phonable_id', 'phonable_type'];
 
     protected $fillable = ['number', 'extension', 'type', 'country', 'country_code'];
-    protected $visible = ['number', 'extension', 'type', 'country', 'country_code'];
+    protected $visible = ['id','number', 'extension', 'type', 'country', 'country_code'];
     protected $touches = ['phonable'];
 
     /**

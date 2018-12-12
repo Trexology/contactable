@@ -14,7 +14,7 @@ class EmailAddress extends Model {
     protected $autoPositionBasedOnFields = ['emailable_id', 'emailable_type'];
 
     protected $fillable = ['address'];
-    protected $visible = ['address'];
+    protected $visible = ['id','address'];
     protected $touches = ['emailable'];
 
     /**

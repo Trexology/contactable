@@ -14,7 +14,7 @@ class Address extends Model {
     protected $autoPositionBasedOnFields = ['addressable_id', 'addressable_type'];
 
     protected $fillable = ['block', 'unit', 'street', 'street_extra', 'city', 'subdivision', 'state', 'province', 'postal_code', 'zip', 'zip_code', 'country', 'country_code', 'lat', 'long'];
-    protected $visible = ['block', 'unit', 'street', 'street', 'street_extra', 'city', 'subdivision', 'postal_code', 'country', 'country_code', 'lat', 'long'];
+    protected $visible = ['id','block', 'unit', 'street', 'street', 'street_extra', 'city', 'subdivision', 'postal_code', 'country', 'country_code', 'lat', 'long'];
     protected $touches = ['addressable'];
 
     /**
