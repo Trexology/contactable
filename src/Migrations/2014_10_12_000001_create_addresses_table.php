@@ -18,8 +18,8 @@ class CreateAddressesTable extends Migration {
             $table->string('street')->nullable();
             $table->string('street_extra')->nullable();
 
-            $table->string('country')->nullable();
-            $table->string('country_code', 2)->nullable()->default('sg');
+            $table->string('country')->default('singapore');
+            $table->string('country_code', 2)->default('sg');
             $table->string('city')->nullable();
             $table->string('subdivision')->nullable();
 

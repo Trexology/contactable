@@ -14,7 +14,7 @@ class CreatePhoneNumbersTable extends Migration
             $table->string('number');
             $table->string('raw_number')->unique();
             $table->string('type', 64)->nullable()->default('work');
-            $table->string('country')->nullable();
+            $table->string('country')->default('singapore');
             $table->string('country_code', 2)->default('sg');
 
             $table->morphs('phonable');
