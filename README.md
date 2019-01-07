@@ -5,13 +5,13 @@
 # Contactable
 
 A [Laravel 5.2+](http://laravel.com/docs/5.2) package designed to enhance Eloquent users (or any other model) with relations to
-multiple e-mail addresses and phone numbers, additionally allowing users to login with any of the above.
+multiple e-mail addresses and addresses, additionally allowing users to login with any of the above.
 
 ```js
 composer require trexology/contactable
 ```
 
-And then include the service provider within `app/config/app.php`. (not required for laravel 5.4+)
+And then include the service provider within `app/config/app.php`. (not required for laravel 5.5+)
 
 ```php
 'providers' => [
@@ -30,7 +30,7 @@ Remove the email column from your create_users_table table migration, if applica
 
  ## Usage
 
-For any models you would like to have their own phone numbers or e-mail addresses, add the appropriate trait:
+For any models you would like to have their own addresses or e-mail addresses, add the appropriate trait:
 
 ```
 use Trexology\Contactable\Traits\Addressable;
@@ -80,7 +80,7 @@ Model::whereHas('emails', function ($query) use ($address) {
 });
 ```
 
-**Phone numbers** are accessed via the “phones()” method (a MorphMany relationship):
+**Phone** are accessed via the “phones()” method (a MorphMany relationship):
 
 ```
 <?php
@@ -89,19 +89,79 @@ Model::whereHas('emails', function ($query) use ($address) {
 $model = new Model;
 $model->phones()->save(new \Trexology\Contactable\PhoneNumber(['number' => '123 4567']));
 
-// Add multiple phone numbers to a pre-existing model
+// Add multiple addresses to a pre-existing model
 $model = Model::find(1);
 $model->phones()->saveMany([
     new \Trexology\Contactable\PhoneNumber(['number' => '(234) 567-8900']),
     new \Trexology\Contactable\PhoneNumber(['number' => '2222222']),
 ]);
 
-// Query records which have at least two phone numbers
+// Query records which have at least two addresses
 Model::has('phones', '>=', 2)->get();
 
 // Query records which have a specific phone number
 $number = '(000) 011-0000';
 Model::whereHas('phones', function ($query) use ($number) {
     $query->where('raw_number', '=', preg_replace("/[^0-9]/", '', $number)); // query only the numbers
+});
+```
+
+**Address** are accessed via the addresses()” method (a MorphMany relationship):
+
+```
+<?php
+
+// Add an address to a new model
+$model = new Model;
+$model->addresses()->save(new \Trexology\Contactable\Address(
+    [
+      'block' => '923',
+      'unit' => '#08-110',
+      'street' => 'Laravel Road 3',
+      'postal_code' => '827923', // or zip or zip_code
+      'country' => 'singapore',
+      'country_code' => 'sg',
+      'lat' => '-7.7871130',
+      'long' => '39.7667430',
+    ]
+  ));
+
+// Add multiple addresses to a pre-existing model
+$model = Model::find(1);
+
+$model->addresses()->saveMany([
+    new \Trexology\Contactable\Address(
+      [
+        'block' => '923',
+        'unit' => '#08-110',
+        'street' => 'Laravel Road 3',
+        'postal_code' => '827923', // or zip or zip_code
+        'country' => 'singapore',
+        'country_code' => 'sg',
+        'lat' => '-7.7871130',
+        'long' => '39.7667430',
+      ]
+    ),
+    new \Trexology\Contactable\Address(
+      [
+        'block' => '782',
+        'unit' => '#09-36',
+        'street' => 'Laravel Road 3',
+        'postal_code' => '876782', // or zip or zip_code
+        'country' => 'singapore',
+        'country_code' => 'sg',
+        'lat' => '33.0691390',
+        'long' => '44.0820410',
+      ]
+    ),
+]);
+
+// Query records which have at least two addresses
+Model::has('addresses', '>=', 2)->get();
+
+// Query records which have a specific street name
+$street_name = '%Laravel Road 2%';
+Model::whereHas('addresses', function ($query) use ($street_name) {
+    $query->where('street', 'LIKE', $street_name);
 });
 ```

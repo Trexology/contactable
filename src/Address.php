@@ -47,6 +47,17 @@ class Address extends Model {
         $this->setAttribute('postal_code', $value);
     }
 
+    // public function setPostalCodeAttribute($value)
+    // {
+    //     if ($this->lat == null && $this->long == null) {
+    //       //Handle google API postal_code to lat long
+    //     }
+    //     if ($this->street == null && $this->country_code == 'sg') {
+    //       //Handle google/gov API postal_code to street name (only for SG?)
+    //     }
+    //     $this->setAttribute('postal_code', $value);
+    // }
+
     public function render()
     {
         return view('contactable::address.' . $this->country, $this->toArray())
